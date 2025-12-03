@@ -11,54 +11,64 @@
       background-color: #0e0e0e;
       font-family: 'Poppins', sans-serif;
       color: #eaeaea;
+      display: flex;
     }
 
-    /* Header */
-    header {
+    /* Sidebar */
+    .sidebar {
+      width: 230px;
+      height: 100vh;
+      background-color: #141414;
+      border-right: 1px solid #2a2a2a;
+      padding: 30px 20px;
+      position: fixed;
       display: flex;
       flex-direction: column;
       align-items: center;
+    }
+
+    .sidebar h1 {
+      font-size: 22px;
+      margin-bottom: 25px;
       text-align: center;
-      padding: 25px 20px;
-      background-color: #141414;
-      border-bottom: 1px solid #2a2a2a;
     }
 
-    header h1 {
-      font-size: 26px;
-      font-weight: 600;
-      margin-bottom: 15px;
-      letter-spacing: 1px;
-    }
-
-    nav {
+    .sidebar nav {
       display: flex;
       flex-direction: column;
       gap: 12px;
+      width: 100%;
     }
 
-    nav a {
+    .sidebar nav a {
       text-decoration: none;
       color: #eaeaea;
       font-weight: 500;
-      padding: 10px 25px;
+      padding: 12px 20px;
       border: 1px solid #333;
       border-radius: 6px;
-      transition: all 0.3s ease;
+      transition: 0.3s;
+      text-align: center;
+      display: block;
     }
 
-    nav a:hover {
+    .sidebar nav a:hover {
       background-color: #eaeaea;
       color: #0e0e0e;
     }
 
-    /* Gallery - portrait style */
+    /* Main content area */
+    .content {
+      margin-left: 260px;
+      padding: 40px 20px;
+      width: calc(100% - 260px);
+    }
+
     .projects {
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 35px;
-      padding: 40px 20px;
       max-width: 600px;
       margin: auto;
     }
@@ -116,6 +126,13 @@
     }
 
     @media (max-width: 768px) {
+      .sidebar {
+        width: 180px;
+      }
+      .content {
+        margin-left: 200px;
+        width: calc(100% - 200px);
+      }
       .card img {
         height: 300px;
       }
@@ -124,52 +141,57 @@
 </head>
 <body>
 
-  <header>
+  <!-- Sidebar -->
+  <div class="sidebar">
     <h1>My Works</h1>
     <nav>
       <a href="project_1.html">Home</a>
       <a href="about.html">About</a>
       <a href="contacts.html">Contact</a>
     </nav>
-  </header>
+  </div>
 
-  <section class="projects">
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1762389475555-a5a6ccc5c456?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=875" alt="Design 1">
-      <div class="card-content">
-        <h3>Modern Workspace</h3>
-        <p>Minimal setup for designers and developers — blending functionality and style.</p>
+  <!-- Main Content -->
+  <div class="content">
+    <section class="projects">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1762389475555-a5a6ccc5c456?auto=format&fit=crop&q=80&w=875">
+        <div class="card-content">
+          <h3>Modern Workspace</h3>
+          <p>Minimal setup for designers and developers — blending functionality and style.</p>
+        </div>
       </div>
-    </div>
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=60" alt="Design 2">
-      <div class="card-content">
-        <h3>Creative Studio</h3>
-        <p>Showcasing brand identity with immersive design and vibrant energy.</p>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=60">
+        <div class="card-content">
+          <h3>Creative Studio</h3>
+          <p>Showcasing brand identity with immersive design and vibrant energy.</p>
+        </div>
       </div>
-    </div>
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=60" alt="Design 3">
-      <div class="card-content">
-        <h3>Web Concept</h3>
-        <p>A dynamic website interface built with modern web technologies.</p>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=60">
+        <div class="card-content">
+          <h3>Web Concept</h3>
+          <p>A dynamic website interface built with modern web technologies.</p>
+        </div>
       </div>
-    </div>
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=800&q=60" alt="Design 4">
-      <div class="card-content">
-        <h3>Product Vision</h3>
-        <p>Minimalist product photography emphasizing simplicity and elegance.</p>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=800&q=60">
+        <div class="card-content">
+          <h3>Product Vision</h3>
+          <p>Minimalist product photography emphasizing simplicity and elegance.</p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <footer>
-    &copy; 2025 My Portfolio. Designed with passion.
-  </footer>
+    <footer>
+      &copy; 2025 My Portfolio. Designed with passion.
+    </footer>
+  </div>
 
 </body>
 </html>
+
